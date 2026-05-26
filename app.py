@@ -15,10 +15,7 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # 3. AI 모델 설정 (질문자님의 앱 핵심 지침)
 # AI Studio에서 만드셨던 앱의 역할을 아래 system_instruction에 적어주세요.
-model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
-    system_instruction="너는 친환경 경로 안내 전문가 EcoRoute야. 사용자가 출발지와 목적지를 말하면 날씨와 고도를 고려해서 최적의 자전거/도보 경로를 안내해줘. 음성 안내를 하듯이 친절하게 설명해줘."
-)
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # 4. 채팅 히스토리 관리
 if "messages" not in st.session_state:
